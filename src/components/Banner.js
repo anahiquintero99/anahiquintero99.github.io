@@ -58,9 +58,6 @@ export const Banner = () => {
               desarrolladora web. Compartiré contigo contenido de mis proyectos
               los cuales espero que disfrutes.
             </p>
-            <button onClick={() => console.log("connect")}>
-              Let's connect <ArrowRightCircle size={25} />
-            </button>
           </Col>
           <Col xs={12} md={6} xl={5} style={{ zIndex: "10" }}>
             <img src={headerImg} alt="Header Img"></img>
