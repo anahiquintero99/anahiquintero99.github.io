@@ -51,7 +51,7 @@ export const Projects = () => {
                     })}
                   </Row>
                 </Tab.Pane>
-                <Tab.Pane eventKey="second">
+                <Tab.Pane eventKey="second" className="projects-github">
                   Visita mi GitHub en donde podrás disfrutar más a detalle sobre
                   mis proyectos en los cuales he trabajado.
                 </Tab.Pane>
