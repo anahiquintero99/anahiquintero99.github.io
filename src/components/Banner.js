@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import { ArrowRightCircle } from "react-bootstrap-icons";
 import headerImg from "../assets/img/bg-avatar.svg";
 
 export const Banner = () => {
@@ -46,7 +45,7 @@ export const Banner = () => {
 
   return (
     <section className="banner" id="home">
-      <Container>
+      <Container className="container-header-details">
         <Row>
           <Col className="container-details-header">
             <span className="tagline">¡Bienvenido!</span>

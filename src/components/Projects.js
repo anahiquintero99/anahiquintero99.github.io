@@ -1,10 +1,22 @@
+import React, { useEffect, useState } from "react";
 import { Col, Container, Row, Tab, Nav } from "react-bootstrap";
 import { ProjectCard } from "./ProjectCard";
 import projImg1 from "../assets/img/project-img1.png";
 import projImg2 from "../assets/img/project-img2.png";
 import projImg3 from "../assets/img/project-img3.png";
+import { getApiGithub } from "../api/apiGithub";
 
 export const Projects = () => {
+  const [githubData, setGithubData] = useState([]);
+
+  useEffect(() => {
+    getApiGithub().then((data) => {
+      setGithubData(data);
+    });
+  }, []);
+
+  console.log(githubData);
+
   const projects = [
     {
       title: "Visolutions",
@@ -51,9 +63,42 @@ export const Projects = () => {
                     })}
                   </Row>
                 </Tab.Pane>
-                <Tab.Pane eventKey="second" className="projects-github">
-                  Visita mi GitHub en donde podrás disfrutar más a detalle sobre
-                  mis proyectos en los cuales he trabajado.
+                <Tab.Pane eventKey="second" className="card-container">
+                  <h3>Información de GitHub</h3>
+
+                  <div className="container-details-info-github">
+                    <div className="container-photo-link">
+                      <img
+                        className="photo-github"
+                        src={githubData.avatar_url}
+                        alt="Avatar"
+                      />
+                      <a
+                        href={githubData.html_url}
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        {" "}
+                        Perfil GitHub
+                      </a>
+                    </div>
+
+                    <div className="container-info-github">
+                      <p>
+                        {" "}
+                        <strong>Usuario: </strong> {githubData.name}
+                      </p>
+                      <p>
+                        {" "}
+                        <strong>Seguidores: </strong> {githubData.followers}
+                      </p>
+                      <p>
+                        {" "}
+                        <strong>No. Proyectos: </strong>{" "}
+                        {githubData.public_repos}
+                      </p>
+                    </div>
+                  </div>
                 </Tab.Pane>
               </Tab.Content>
             </Tab.Container>

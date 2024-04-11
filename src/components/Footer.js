@@ -12,9 +12,6 @@ export const Footer = () => {
             <img src={navIcon1} alt="" />
           </a>
           <a href="https://www.instagram.com/anahi_quintero99/">
-            <img src={navIcon2} alt="" />
-          </a>
-          <a href="https://www.instagram.com/anahi_quintero99/">
             <img src={navIcon3} alt="" />
           </a>
         </div>
